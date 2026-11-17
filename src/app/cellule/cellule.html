@@ -1,10 +1,11 @@
-@if (couleur === 'noir') {
-  <span>⚫</span>
-}
+<div (click)="jouer()">
+  @if (couleur() === 'noir') {
+    <span>⚫</span>
+  }
 
-@if (couleur === 'blanc') {
-  <span>⚪</span>
-}
+  @if (couleur() === 'blanc') {
+    <span>⚪</span>
+  }
+</div>
 
-
-<span>{{ ligne() }},{{ colonne() }}</span>
+<!-- <span>{{ ligne() }},{{ colonne() }}</span> -->

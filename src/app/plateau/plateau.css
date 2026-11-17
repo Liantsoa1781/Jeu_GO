@@ -1,28 +1,36 @@
 .plateau {
   position: relative;
-  width: 450px;
-  height: 450px;
 }
 
 table {
   position: absolute;
-  width: 100%;
-  height: 100%;
   border-collapse: collapse;
+  table-layout: fixed;
 }
 
 .grille-affichage {
+  margin-top: 28px;
+  margin-left: 28px;
   z-index: 1;
+  background-color: aqua;
 }
 
 .grille-affichage td {
+  width: 56px;
+  height: 56px;
   border: 1px solid black;
+  padding: 0;
 }
 
 .grille-interaction {
   z-index: 2;
+  /* border: 1px solid black; */
+  /* background-color: brown; */
 }
 
 .grille-interaction td {
-  border: none;
+  width: 56px;
+  height: 56px;
+  border: 1px solid transparent;
+  padding: 0;
 }

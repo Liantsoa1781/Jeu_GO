@@ -5,7 +5,7 @@ type Cellule = 'noir' | 'blanc' | null;
   providedIn: 'root'
 })
 export class Action {
-    joueurActuel = signal('noir');
+    joueurActuel = signal<'noir' | 'blanc'>('noir');
 
     plateau = signal<Cellule[][]>(
         Array.from(
@@ -13,4 +13,12 @@ export class Action {
         () => Array<Cellule>(9).fill(null)
         )
     );
+
+    jouer(ligne: number, colonne: number) {
+        const nouveauPlateau = this.plateau().map(ligne => [...ligne]);
+
+        nouveauPlateau[ligne][colonne] = this.joueurActuel();
+
+        this.plateau.set(nouveauPlateau);
+    }
 }
