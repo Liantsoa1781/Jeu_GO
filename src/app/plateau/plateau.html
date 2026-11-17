@@ -1,0 +1,31 @@
+<p>Bienvenu sur GO</p>
+
+<div class="plateau">
+
+  <!-- Grille visible -->
+  <table class="grille-affichage">
+    <tbody>
+      @for (ligne of lignesAffichage; track $index) {
+        <tr>
+          @for (colonne of colonnesAffichage; track $index) {
+            <td></td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Grille invisible pour les clics -->
+  <table class="grille-interaction">
+    <tbody>
+      @for (ligne of lignesInteraction; track $index) {
+        <tr>
+          @for (colonne of colonnesInteraction; track $index) {
+            <td></td>
+          }
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</div>

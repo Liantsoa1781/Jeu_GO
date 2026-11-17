@@ -1,0 +1,28 @@
+.plateau {
+  position: relative;
+  width: 450px;
+  height: 450px;
+}
+
+table {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+.grille-affichage {
+  z-index: 1;
+}
+
+.grille-affichage td {
+  border: 1px solid black;
+}
+
+.grille-interaction {
+  z-index: 2;
+}
+
+.grille-interaction td {
+  border: none;
+}
