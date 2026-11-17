@@ -10,6 +10,5 @@ import { Component, input } from '@angular/core';
 export class Cellule {
   ligne = input(0);
   colonne = input(0);
-
-  couleur: 'noir' | 'blanc' | null = null;
+  couleur = input<'noir' | 'blanc' | null>(null);
 }

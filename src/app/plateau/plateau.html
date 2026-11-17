@@ -6,15 +6,14 @@
     <p>Score blanc : </p>
 </div>
 
-
 <div class="plateau">
 
   <!-- Grille visible -->
   <table class="grille-affichage">
     <tbody>
-      @for (ligne of lignesAffichage; track $indexLigne) {
+      @for (ligne of lignesAffichage; track $index) {
         <tr>
-          @for (colonne of colonnesAffichage; track $indexColonne) {
+          @for (colonne of colonnesAffichage; track $index) {
             <td></td>
           }
         </tr>
@@ -25,14 +24,15 @@
   <!-- Grille invisible pour les clics -->
   <table class="grille-interaction">
     <tbody>
-      @for (ligne of lignesInteraction; track $indexLigne) {
+      @for (ligne of lignesInteraction; track $index; let indexLigne = $index) {
         <tr>
-          @for (colonne of colonnesInteraction; track $indexColonne) {
+          @for (colonne of colonnesInteraction; track $index; let indexColonne = $index) {
             <td>
-                <app-cellule
-                    [ligne]="$indexLigne"
-                    [colonne]="$indexColonne">
-                </app-cellule>
+              <app-cellule
+                [ligne]="indexLigne"
+                [colonne]="indexColonne"
+                [couleur]="actionService.plateau()[indexLigne][indexColonne]">
+              </app-cellule>
             </td>
           }
         </tr>
