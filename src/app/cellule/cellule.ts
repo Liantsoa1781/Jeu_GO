@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './cellule.css',
   templateUrl: './cellule.html',
 })
-export class Cellule {}
+export class Cellule {
+  ligne = input(0);
+  colonne = input(0);
+
+  couleur: 'noir' | 'blanc' | null = null;
+}

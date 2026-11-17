@@ -1,13 +1,20 @@
-<p>Bienvenu sur GO</p>
+<h1>Bienvenu sur GO</h1>
+
+<div class="infos">
+    <p>Joueur actuel : {{actionService.joueurActuel()}}</p>
+    <p>Score noir : </p>
+    <p>Score blanc : </p>
+</div>
+
 
 <div class="plateau">
 
   <!-- Grille visible -->
   <table class="grille-affichage">
     <tbody>
-      @for (ligne of lignesAffichage; track $index) {
+      @for (ligne of lignesAffichage; track $indexLigne) {
         <tr>
-          @for (colonne of colonnesAffichage; track $index) {
+          @for (colonne of colonnesAffichage; track $indexColonne) {
             <td></td>
           }
         </tr>
@@ -18,14 +25,23 @@
   <!-- Grille invisible pour les clics -->
   <table class="grille-interaction">
     <tbody>
-      @for (ligne of lignesInteraction; track $index) {
+      @for (ligne of lignesInteraction; track $indexLigne) {
         <tr>
-          @for (colonne of colonnesInteraction; track $index) {
-            <td></td>
+          @for (colonne of colonnesInteraction; track $indexColonne) {
+            <td>
+                <app-cellule
+                    [ligne]="$indexLigne"
+                    [colonne]="$indexColonne">
+                </app-cellule>
+            </td>
           }
         </tr>
       }
     </tbody>
   </table>
 
+</div>
+
+<div>
+    <button>Fin de tour</button>
 </div>
