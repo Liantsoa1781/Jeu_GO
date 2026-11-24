@@ -1,0 +1,44 @@
+<h1>Parties sauvegardées</h1>
+
+@if (parties.length === 0) {
+
+    <p>Aucune partie sauvegardée.</p>
+
+} @else {
+
+    @for (partie of parties; track partie.id) {
+
+        <div class="partie">
+
+            <h2>{{ partie.nom }}</h2>
+
+            <p>Score noir : {{ partie.scoreNoir }}</p>
+
+            <p>Score blanc : {{ partie.scoreBlanc }}</p>
+
+            <p>Joueur actuel : {{ partie.joueurActuel }}</p>
+
+            <button (click)="chargerPartie(partie)">
+                Charger
+            </button>
+
+            <button (click)="supprimerPartie(partie.id)">
+                Supprimer
+            </button>
+
+        </div>
+
+    }
+}
+
+<br>
+
+<a routerLink="/jeu">
+    Retour au jeu
+</a>
+
+<br>
+
+<a routerLink="/">
+    Retour à l'accueil
+</a>

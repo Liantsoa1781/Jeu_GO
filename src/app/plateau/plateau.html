@@ -1,4 +1,9 @@
-<h1>Bienvenu sur GO</h1>
+<div>
+  <input
+    type="text"
+    [(ngModel)]="nomPartie"
+    placeholder="Nom de la partie">
+</div>
 
 <div class="infos">
     <p>Joueur actuel : {{actionService.joueurActuel()}}</p>
@@ -10,6 +15,12 @@
     <button (click)="actionService.changerTour()">Fin de tour</button>
 
     <button (click)="actionService.passerTour()">Passer</button>
+</div>
+
+<div>
+  <button (click)="actionService.sauvegarderPartie(nomPartie)">
+    Sauvegarder
+  </button>
 </div>
 
 <div class="plateau">

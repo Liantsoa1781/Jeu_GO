@@ -1,12 +1,13 @@
-import { Component, signal } from '@angular/core';
-import { Plateau } from './plateau/plateau';
+import { Component } from '@angular/core';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  imports: [Plateau],
   selector: 'app-root',
-  styleUrl: './app.css',
+  standalone: true,
+  imports: [RouterLink, RouterOutlet],
   templateUrl: './app.html',
+  styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('Jeu_GO');
+
 }

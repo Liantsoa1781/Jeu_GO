@@ -106,4 +106,46 @@ export class Action {
 
         this.plateau.set(nouveauPlateau);
     }
+
+    sauvegarderPartie(nom: string) {
+        if (nom.trim() === '') {
+            return;
+        }
+
+        const partie = {
+            id: Date.now(),
+            nom: nom,
+            plateau: this.plateau(),
+            joueurActuel: this.joueurActuel(),
+            passesConsecutifs: this.passesConsecutifs(),
+            aJoue: this.aJoue(),
+            scoreNoir: this.scoreNoir(),
+            scoreBlanc: this.scoreBlanc()
+        };
+
+        // console.log("partie:", partie);
+
+        const partiesSauvegardees = localStorage.getItem('parties');
+
+        // console.log(partiesSauvegardees);
+
+        let parties = [];
+
+        if (partiesSauvegardees !== null) {
+            parties = JSON.parse(partiesSauvegardees);
+        }
+
+        parties.push(partie);
+
+        localStorage.setItem('parties', JSON.stringify(parties));
+    }
+
+    chargerPartie(partie: any) {
+        this.plateau.set(partie.plateau);
+        this.joueurActuel.set(partie.joueurActuel);
+        this.passesConsecutifs.set(partie.passesConsecutifs);
+        this.aJoue.set(partie.aJoue);
+        this.scoreNoir.set(partie.scoreNoir);
+        this.scoreBlanc.set(partie.scoreBlanc);
+    }
 }
