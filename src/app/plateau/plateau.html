@@ -6,6 +6,14 @@
     <p>Score blanc : </p>
 </div>
 
+<div class="tour">
+    <button (click)="actionService.changerTour()">Fin de tour</button>
+</div>
+
+<div class="pass">
+    <button (click)="actionService.passerTour()">Passer</button>
+</div>
+
 <div class="plateau">
 
   <!-- Grille visible -->
@@ -40,8 +48,4 @@
     </tbody>
   </table>
 
-</div>
-
-<div>
-    <button (click)="actionService.changerJoueur()">Fin de tour</button>
 </div>

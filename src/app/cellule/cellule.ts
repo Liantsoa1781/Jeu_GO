@@ -18,4 +18,13 @@ export class Cellule {
     this.actionService.jouer(this.ligne(), this.colonne());
   }
 
+  retirer(event: MouseEvent) {
+    event.preventDefault();
+
+    this.actionService.retirer(
+      this.ligne(),
+      this.colonne()
+    );
+  }
+
 }
