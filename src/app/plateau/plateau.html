@@ -2,15 +2,13 @@
 
 <div class="infos">
     <p>Joueur actuel : {{actionService.joueurActuel()}}</p>
-    <p>Score noir : </p>
-    <p>Score blanc : </p>
+    <p>Score noir : {{actionService.scoreNoir()}}</p>
+    <p>Score blanc : {{actionService.scoreBlanc()}}</p>
 </div>
 
 <div class="tour">
     <button (click)="actionService.changerTour()">Fin de tour</button>
-</div>
 
-<div class="pass">
     <button (click)="actionService.passerTour()">Passer</button>
 </div>
 

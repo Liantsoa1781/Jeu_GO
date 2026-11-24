@@ -87,8 +87,17 @@ export class Action {
             return;
         }
 
+        //Condition pour retirer que celui de l'adversaire
         if (pierre === this.joueurActuel()) {
             return;
+        }
+
+        //Condition pour mettre en place le score
+        if(this.joueurActuel() == 'noir'){
+            this.scoreNoir.set(this.scoreNoir() + 1);
+        }
+        else{
+            this.scoreBlanc.set(this.scoreBlanc() + 1);
         }
 
         const nouveauPlateau = this.plateau().map(ligne => [...ligne]);

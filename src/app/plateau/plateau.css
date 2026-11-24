@@ -12,7 +12,7 @@ table {
   margin-top: 28px;
   margin-left: 28px;
   z-index: 1;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
 .grille-affichage td {
@@ -36,5 +36,5 @@ table {
 }
 
 .tour{
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
