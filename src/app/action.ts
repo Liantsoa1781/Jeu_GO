@@ -15,10 +15,23 @@ export class Action {
     );
 
     jouer(ligne: number, colonne: number) {
+
+        if (this.plateau()[ligne][colonne] !== null) {
+            return;
+        }
+
         const nouveauPlateau = this.plateau().map(ligne => [...ligne]);
 
         nouveauPlateau[ligne][colonne] = this.joueurActuel();
 
         this.plateau.set(nouveauPlateau);
+    }
+
+    changerJoueur() {
+        if (this.joueurActuel() === 'noir') {
+            this.joueurActuel.set('blanc');
+        } else {
+            this.joueurActuel.set('noir');
+        }
     }
 }
